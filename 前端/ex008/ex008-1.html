@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*document 对象的属性显示文档相关信息*/
+document.write(" 当前文档的标题:"+document.title+"<BR>");
+document.write(" 当前文档的URL:"+document.URL+"<BR>");
+document.write(" 当前文档的背景色:"+document.bgColor+"<BR>");
+document.write(" 当前文档的最后修改日期:"+document.lastModified+"<BR>");
+document.write(" 当前文档包含"+document.links.length+"个超链接<BR>");
+document.write(" 当前文档包含"+document.images.length+" 个图像<BR>");
+var i,cell;
+for(i=0;i<document.all.length;i++) 	{ 	//all 属性返回页面元素数组，通过循环遍历
+    cell=document.all[i]; if(i>0) { document.write(",");
+    } document.write(cell.tagName);
+}
+
+</script>
+</body>
+</html>

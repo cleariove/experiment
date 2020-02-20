@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label for="year">年</label><input type="text" id="year" placeholder="year">&nbsp
+<label for="month">月</label><input type="text" id="month">
+<label for="date">日</label><input type="text" id="date">
+<button onclick="cal()">aaa</button>
+<div id="result"> </div>
+<script>
+    function cal()
+    {
+        var year = document.getElementById("year").value;
+        var month = document.getElementById("month").value;
+        var date = document.getElementById("date").value;
+        var now = new Date();
+        var birth = new Date();
+        birth.setFullYear(year);
+        birth.setMonth(month-1);
+        birth.setDate(date);
+        var x = now - birth;
+        document.getElementById("result").innerHTML = eval(x/1000/60/60/24);
+    }
+</script>
+</body>
+</html>

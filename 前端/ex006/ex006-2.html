@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var stu = new Array("张三","李四","王五","赵六","孙七");
+    var mates = ["张三","李四","王五","赵六","孙七"];
+    var classmates = new Array();
+    classmates[0] = "张三";
+    classmates[1] = "李四";
+    classmates[2] = "王五";
+    classmates[3] = "赵六";
+    classmates[4] = "孙七";
+    for(var i = 0;i<stu.length;i++)
+    {
+        document.write(stu[i]+"<br>");
+        document.write(mates[i]+"<br>")
+    }
+    for(var index in classmates)
+    {
+        document.write(classmates[index]);
+    }
+    document.write("<hr>");
+    document.write("<br>PI="+Math.PI+"<br>");
+    document.write("Math.round(3.14)="+Math.round(3.14)+"<br>");
+    document.write("Math.pow(2,3)="+Math.pow(2,3)+"<br>");
+    document.write("Math.random()="+Math.random()+"<br>");
+    document.write("Math.floor(3.14)="+Math.floor(3.14)+"<br>");
+    document.write("Math.ceil(3.14)="+Math.ceil(3.14)+"<br>");
+    document.write("<hr>");
+    var date = new Date();
+    document.write("date.getFullYear()="+date.getFullYear()+"<br>");
+    document.write("date.getMonth()="+date.getMonth()+"<br>");
+    document.write("date.getDate()="+date.getDate()+"<br>");
+    document.write("date.getDay()="+date.getDay()+"<br>");
+    document.write("<hr>");
+    var string1 = new String("Hello,World");
+    document.write("string.length="+string1.length+"<br>");
+    document.write("string.toLowerCase()="+string1.toLowerCase()+"<br>");
+    document.write("string.toUpperCase()="+string1.toUpperCase()+"<br>");
+    document.write("string.charAt(3)="+string1.charAt(3)+"<br>");
+    document.write("string.substr(3,6)="+string1.substr(3,6)+"<br>");
+    document.write("string.substring(3,6)="+string1.substring(3,6)+"<br>");
+</script>
+</body>
+</html>

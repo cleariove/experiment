@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function check() {
+           var userName=   document.getElementsByName("userName")[0].value;
+           checkoutUser(userName);
+           var password1 =document.getElementsByName("key")[0].value;
+           var password2 = document.getElementsByName("key1")[0].value;
+           checkoutPassword(password1,password2);
+           var email = document.getElementsByName("email")[0].value;
+           checkoutEmail(email);
+
+        }
+        function checkoutUser(username) {
+            var firstChar = username.charAt(0);
+            if(username.length<6||username>20)
+                alert("长度应为6-20");
+            if(!isNaN(firstChar))
+                alert("不能数字开头")
+        }
+        function checkoutPassword(password1,password2) {
+            if(password1!=password2){
+                alert("两次密码不相等");
+                if(password1.length<6||password1>20){
+                    alert("密码长度必须为6-10")
+                }
+            }
+
+        }
+
+        function checkoutEmail(email) {
+            var varapos = email.indoxOf("@");
+            var dotpos =email.indexOf(".");
+            if(varapos==1||dotpos-varapos<1){
+                alert("邮箱格式错误")
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+<form name="myform" method="post" action="" onsubmit="">
+    <table >
+        <caption><h3>表单验证</h3></caption>
+        <tr>
+            <td >用户名</td>
+            <td ><input type="text" name="userName" onblur="checkcardno();"></td>
+            <td><label id="err_cardno"></label></td>
+        </tr>
+        <tr>
+            <td >密码</td>
+            <td ><input type="password" name="key" onblur="checkkey();"></td>
+            <td><label id="err_key"></label></td>
+        </tr>
+        <tr>
+            <td >确认密码：</td>
+            <td ><input type="password" name="key2" onblur="checkkey2();"></td>
+            <td><label id="err_key2"></label></td>
+        </tr>
+        <tr>
+            <td >电子邮件</td>
+            <td ><input type="text" name="email" onblur="checkqqwx();"></td>
+            <td><label id="err_qqwx"></label></td>
+        </tr>
+        <tr><td colspan="4">
+            <input type="submit" onclick="check()" value="提交">&nbsp;&nbsp;
+            <input type="reset" value="重置"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页时钟</title>
+    <script>
+    function genDate(){
+        var date = new Date();
+        var hours='';
+        var a='';
+        if(date.getHours()>12){
+            hours=date.getHours()-12;
+            a='PM'
+        }
+        else
+        {
+            a='AM';
+        }
+        var dateStr = hours+":"+date.getMinutes()+":"+date.getSeconds()+" "+a;
+
+        var time = document.getElementById("time");
+
+        time.innerHTML = dateStr;
+    }
+
+    window.setInterval("genDate()",1000);
+
+</script>
+</head>
+
+<body>
+现在是：<span id = "time"></span>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div
+        {
+            background:#CDEBE6;
+            color:#330000;
+            width:750px;
+            font-size:20px;
+            font-weight:bolder;
+        }
+        h4
+        {
+            text-align:center;
+        }
+        b
+        {
+            color:red;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+<div id="" class="">
+    <h4>系统函数使用</h4>
+    <b>1.eval("字符串")<br></b>
+    <script type="text/javascript">
+        var rel = eval("1000+3/5");
+        document.write("&nbsp;&nbsp;"+"1000+3/5="+rel);
+        document.write("<br>");
+        document.write("&nbsp;&nbsp;"+"x=10;y=20,x*y=");
+        eval("x=10;y=20;document.write(x*y)");
+        document.write("<br>&nbsp;&nbsp;2+2="+eval("2+2")+"<br>");
+        var x = 10;
+        document.write("&nbsp;&nbsp;"+"x=10,x+17="+eval(x+17)+"<br>");
+    </script>
+    <b>2.escape("字符串")<br></b>
+    <script type="text/javascript">
+        document.write("&nbsp;&nbsp;"+"escape('&')="+escape("&"));
+        var result = escape("my name is 张华");
+        document.write("<br>&nbsp;&nbsp;"+"escape('my name is 张华')="+result);
+    </script>
+    <b>3.unecspe(string)<br></b>
+    <script type="text/javascript">
+        document.write("&nbsp;&nbsp;"+"unescape('%26')="+unescape("%26"));
+        document.write("<br/>");
+        result=unescape("&nbsp;&nbsp;"+"my%20name%20is%20%u5F20%u534E ");
+        document.write("&nbsp;&nbsp;"+"unescape('my%20name%20is%20%u5F20%u534E ')="+result);
+    </script>
+    <b>4.parseFloat(string)<br></b>
+    <script type="text/javascript">
+        document.write("&nbsp;&nbsp;"+"parseFloat('3.14')="+parseFloat("3.14"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"parseFloat('314e-2')="+parseFloat("314e-2"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"parseFloat('3.14ab')="+parseFloat("3.14ab"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"parseFloat('FF2')="+parseFloat("FF2"));
+        document.write("<br />")
+    </script>
+    <b>5.parseInt(numberstring,radix)<br></b>
+    //两个参数分别代表数字串和进制
+    <script type="text/javascript">
+        document.write("&nbsp;&nbsp;"+"32:"+parseInt("32"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"032:"+parseInt("032"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"0x32:"+parseInt("0x32"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"parseInt('15*3',10)="+parseInt("15*3",10));
+        document.write("<br />");
+    </script>
+    <b>6.isNaN<br></b>
+    <script type="text/javascript">
+        document.write("&nbsp;&nbsp;"+"isNaN(\"5454g\")="+isNaN("5454g"));
+        document.write("<br />");
+        document.write("&nbsp;&nbsp;"+"isNaN(\"789\")="+isNaN("789"));
+        document.write("<br />");
+    </script>
+</div>
+</body>
+</html>

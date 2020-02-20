@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #img
+        {
+            margin: 0 auto;
+            height: 300px;
+            width: 1520px;
+            background-size: 100%;
+            background-image: url("1.jpg");
+        }
+        ul
+        {
+            list-style: none;
+            margin-left: 20px;
+            position: absolute;
+            margin-top: 275px;
+        }
+        li
+        {
+            display: inline-block;
+            width: 5em;
+            text-align:center;
+        }
+        a
+        {
+            text-decoration: none;
+            font-size: 20px;
+            color: green;
+        }
+        dl
+        {
+            margin: 20px 100px;
+        }
+        dt
+        {
+            font-size: 40px;
+            color: green;
+        }
+        dd
+        {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .space
+        {
+            letter-spacing: 1em;
+        }
+        .green
+        {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="img">
+    <ul>
+        <li class="space"><a href="#">首页</a><li>
+        <li><a href="#">会议介绍</a><li>
+        <li class="space"><a href="#">介绍</a><li>
+        <li class="space"><a href="#">安排</a><li>
+        <li class="space"><a href="#">报告</a><li>
+        <li class="space"><a href="#">交通</a><li>
+        <li class="space"><a href="#">下载</a><li>
+        <li class="space"><a href="#">注册</a><li>
+        <li><a href="#">联系我们</a><li>
+    </ul>
+</div>
+<div>
+    <dl style="float: left">
+        <dt>会议概要</dt>
+        <dd>2012年会议......</dd>
+        <dd>时间：</dd>
+        <dd>地点：</dd>
+        <dd>会议主题：ipv6</dd>
+    </dl>
+    <dl style="float: right">
+        <dt>注册信息</dt>
+        <dd class="green">在线注册</dd>
+        <dd class="green">修改信息</dd>
+    </dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+S->Qc|cB
+Q->Rb|b
+R->aA|bcaA|caC
+A->@|bcaA
+B->@|ab
+C->A|baA

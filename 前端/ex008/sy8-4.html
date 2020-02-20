@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用window 对象的定时器方法实现状态栏移动</title>
+</head>
+<body onload="setInterval(startStatus(),100)">
+<div>
+    <h3 align="center">单击对应的按钮，实现动态状态栏的滚动与停止</h3>
+    <input type="button" value="开始状态栏滚动" onclick="MyStart()"><br>
+    <input type="button" value="停止状态栏滚动" onclick="MyStop()">
+</div>
+
+<script language="JavaScript" type="text/javascript">
+    var TimerID;
+    var dir=1;
+    var str_num=0;
+
+    function startStatus() {
+        var str_space="";
+        str_num=str_num+1*dir;
+        if(str_num>30||str_num<0) {
+            dir=-1*dir;
+        }
+        for(var i=0;i<str_num;i++) {
+            str_space+=" ";
+        }
+        window.status=str_space+str;
+    }
+    function MyStart() {
+        TimerID=setInterval("startStatus();",100);
+    }
+    function MyStop() {
+        clearInterval(TimerID);
+        window.status="状态栏移动结束!";
+    }
+</script>
+</body>
+</html>

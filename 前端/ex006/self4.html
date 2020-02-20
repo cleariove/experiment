@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input id="text">
+    <br>
+    <button id="(" onclick="addToText(this)">(</button>
+    <button id=")" onclick="addToText(this)">)</button>
+    <button id="sin" onclick="addToText(this)">sin</button>
+    <button id="cos" onclick="addToText(this)">cos</button>
+    <br>
+    <button id="7" onclick="addToText(this)">7</button>
+    <button id="8" onclick="addToText(this)">8</button>
+    <button id="9" onclick="addToText(this)">9</button>
+    <button id="/" onclick="addToText(this)">/</button>
+    <br>
+    <button id="4" onclick="addToText(this)">4</button>
+    <button id="5" onclick="addToText(this)">5</button>
+    <button id="6" onclick="addToText(this)">6</button>
+    <button id="*" onclick="addToText(this)">*</button>
+    <br>
+    <button id="1" onclick="addToText(this)">1</button>
+    <button id="2" onclick="addToText(this)">2</button>
+    <button id="3" onclick="addToText(this)">3</button>
+    <button id="-" onclick="addToText(this)">-</button>
+    <br>
+    <button id="." onclick="addToText(this)">.</button>
+    <button id="0" onclick="addToText(this)">0</button>
+    <button id="tan" onclick="addToText(this)">tan</button>
+    <button id="+" onclick="addToText(this)">+</button>
+    <br>
+    <button id="sqrt" onclick="addToText(this)">sqrt</button>
+    <button id="e" onclick="addToText(this)">e</button>
+    <button id="pi" onclick="addToText(this)">pi</button>
+    <button id="B" onclick="addToText(this)">B</button>
+    <button id="C" onclick="addToText(this)">C</button>
+    <button onclick="cal()">=</button>
+</div>
+<script>
+    function cal()
+    {
+        var text = document.getElementById("text");
+        var content = text.value.replace(/(pi|e|sin|cos|tan|acos|asin|sqrt)/g, function($0, $1) {
+            return {
+                "pi": "Math.PI",
+                "e": "Math.E",
+                "sin": "Math.sin",
+                "cos":"Math.cos",
+                "tan":"Math.tan",
+                "acos":"Math.acos",
+                "asin":"Math.asin",
+                "sqrt":"Math.sqrt"
+            }[$1];
+        });
+        text.value = eval(text.value);
+    }
+    function addToText(val)
+    {
+        var text = document.getElementById("text");
+        if(this.id === "sin"||this.id === "cos" || this.id === "tan")
+            text.value = text.value + val.id+"(";
+        else if(this.id === "C")
+            text.value = " ";
+        else if(this.id === "B")
+            if(text.value.match(/pi|sin|cos|tan|asin|sqrt|acos|undefined$/))
+                text.value = text.value.replace(/pi|sin|cos|tan|asin|sqrt|acos|undefined$/,'');
+            else  text.value = text.value.replace(/.$/,'');
+        else
+            text.value += val.id;
+    }
+</script>
+</body>
+</html>

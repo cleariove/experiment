@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="MyStart()">
+    开始滚动
+</button>
+<button onclick="MyStop()">
+    停止滚动
+</button>
+<p>啊哈哈哈哈</p>
+<script language="JavaScript" type="text/javascript">
+    var TimerID;
+    var dir=1; 	//用于控制移动的方向
+    var str_num=0;
+    //用于动态显示的目标字符串
+    var str="欢迎来到javascript世界!";
+    //设定动态显示的状态栏信息
+    function startStatus()
+    {
+        var str_space=""; str_num=str_num+1*dir;
+        if(str_num>30||str_num<0)
+        { 	//移动范围0~30 个字符
+            dir=-1*dir;
+        }
+        for(var i=0;i<str_num;i++)
+        {
+            str_space+=" "; 	//在字符串的左或右加空格实现移动
+        }
+        window.status=str_space+str; 	//写入window的状态栏
+    }
+    //状态栏滚动开始
+    function MyStart()
+    {
+        TimerID=setInterval("startStatus()",100); 	//每间隔100 毫秒执行1次 startStatus()
+    }
+    //状态栏滚动结束，并更新状态栏
+    function MyStop()
+    {
+        clearInterval(TimerID); //清除定时器
+        window.status="状态栏移动结束!";
+    }
+</script>
+</body>
+</html>

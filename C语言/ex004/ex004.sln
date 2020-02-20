@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ex004", "ex004\ex004.vcxproj", "{5764E545-7244-4B19-B5A6-7C6FB833698D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5764E545-7244-4B19-B5A6-7C6FB833698D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5764E545-7244-4B19-B5A6-7C6FB833698D}.Debug|Win32.Build.0 = Debug|Win32
+		{5764E545-7244-4B19-B5A6-7C6FB833698D}.Release|Win32.ActiveCfg = Release|Win32
+		{5764E545-7244-4B19-B5A6-7C6FB833698D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

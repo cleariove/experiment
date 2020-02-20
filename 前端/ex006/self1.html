@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+请输入字符串
+<script>
+    function isNum()
+    {
+        var txt = document.getElementById("txt");
+        var str = txt.value;
+        if(isNaN(str))
+            document.getElementById("result").innerHTML="非数字串";
+        else
+            document.getElementById("result").innerHTML=parseFloat(str);
+
+    }
+</script>
+<input type="text" id="txt">
+<button onclick="isNum()">
+    提交
+</button>
+<div id="result">
+
+</div>
+</form>
+</body>
+</html>

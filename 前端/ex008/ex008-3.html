@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div
+        {
+            background:#009933;
+            width:400px;
+            height:300px;
+            margin:0px auto;
+            border:2px dotted #ff3300;
+            color:white;
+        }
+        form
+        {
+            margin:0 auto;
+        }
+        table
+        {
+            margin:0 auto;
+            font-weight:bold;
+        }
+        h2
+        {
+            font-size:28px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <form>
+        <table>
+            <caption><h2>彩票投注</h2></caption>
+            <tr>
+                <td>
+                    <input type="button" value="机选1注:" onclick="selectnumber(1)">
+                </td>
+                <td rowspan="3" colspan="2" id="text">
+                    <select id="number1" style="height: 200px;width: 250px" multiple>
+
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="删除" onclick="delSelect()">
+                </td>
+            </tr>
+            <tr>
+<!--                <td>-->
+<!--                    <input type="text" id="number2">-->
+<!--                </td>-->
+                <td>
+                    <input type="button" value="机选5注:" onclick="selectnumber(5)">
+                </td>
+            </tr>
+            <tr>
+<!--                <td>-->
+<!--                    <input type="text" id="number3">-->
+<!--                </td>-->
+                <td>
+                    <input type="button" value="机选10注:" onclick="selectnumber(10)">
+                </td>
+                <td>
+                    <input type="button" value="清空" onclick="delSelectAll()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+        function selectnumber(n)
+        {
+    //彩票选号助手
+            var number= new Array();
+            var objsel=document.getElementById("number1");
+            var selnum=objsel.options.length;//保存选项添加前总数
+            for (j=0;j<n;j++)
+            {
+                var list="";
+            // 随机产生7 个 01~30 之间的整数
+                for (i=0;i<=6;i++ )
+                {
+                    number[i]=Math.floor(Math.random()*30+1);
+                    //下舍入
+                    if(number[i]<10)
+                    {
+                        number[i]="0"+number[i];
+                    }
+                }
+                list=number.join(" 	");
+                //写入到列表框中
+                var opt=document.createElement("option");//创建一个列表项option
+                var opt_text=document.createTextNode(list);// 创建一个文本节点
+                opt.value=j;
+                opt.appendChild(opt_text); //将新的列表项节点加入DOM树
+                objsel.appendChild(opt); //将新文本节点加入DOM树
+            }
+            //始终将新添加的第一个列表项作为预选项
+        }
+        function delSelect()
+        {
+            var objSelect=document.getElementById( "number1");
+            var strIndex=objSelect.selectedIndex;
+            if (strIndex != -1)
+            {
+                objSelect.options.remove(strIndex);
+            }
+            else
+            {
+                alert("请先选择列表项后再删除！");
+            }
+        }
+        function delSelectAll()
+        {
+            var objSelect=document.getElementById("number1");
+            var strIndex=objSelect.options.length;
+            if (strIndex>0)
+            {
+                for (var i=0;i<=strIndex-1;i++ )
+                {
+                    objSelect.options.remove(0);
+                }
+            }
+            else
+            {
+                alert("请先选择列表项后再删除！");
+            }
+        }
+</script>
+</body>
+</html>

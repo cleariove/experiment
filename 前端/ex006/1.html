@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS简易计算器</title>
+    <link href="1.css" rel="stylesheet">
+</head>
+<body>
+<div id="calculator">
+    <div id="calculator_container">
+        <h3>计算器</h3>
+        <table id="calculator_table">
+            <tbody>
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="resultIpt">
+                </td>
+            </tr>
+        <tr>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">(</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)" >)</button></td>
+            <td><button id="delete" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">B</button></td>
+            <td><button id="clear" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">C</button></td>
+        </tr>
+        <tr>
+            <td><button id="plus" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">+</button></td>
+            <td><button id="sub" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">-</button></td>
+            <td><button id="multi"  class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">*</button></td>
+            <td><button id="divide" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">/</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">1</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">2</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">3</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">4</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">5</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">6</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">7</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">8</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">9</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">0</button></td>
+            <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">.</button></td>
+            <td><button id="result" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">=</button></td>
+        </tr>
+            <tr>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">pi</button></td>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">e</button></td>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">sqrt</button></td>
+                <td><button id="result" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">acos</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">sin</button></td>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">cos</button></td>
+                <td><button class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">tan</button></td>
+                <td><button id="result" class="btn btn-default btn-block" onclick="calCulate(this.innerHTML)">asin</button></td>
+            </tr>
+            </tbody>
+    </table>
+</div>
+</div>
+<script>
+
+    function calCulate(val) {
+        var show = document.getElementById("resultIpt");
+        if (val == "=") {
+            //eval()方法可以直接计算内部的简单运算
+            // var s="my javascript is very my poor,who can is help me?"
+            // var reg=/(\w*)my(.*)is(.*)can(.*)/g;
+            // alert(s.replace(reg,"$1his$2was$3could$4"))
+            show.value = show.value.replace(/(pi|e|sin|cos|tan|acos|asin|sqrt)/g, function($0, $1) {
+                return {
+                    "pi": "Math.PI",
+                    "e": "Math.E",
+                    "sin": "Math.sin",
+                    "cos":"Math.cos",
+                    "tan":"Math.tan",
+                    "acos":"Math.acos",
+                    "asin":"Math.asin",
+                    "sqrt":"Math.sqrt"
+                }[$1];
+            });
+           show.value = eval(show.value);
+            return;
+        }else if (val == "sin"||val == "cos"||val == "tan"||val == "asin"||val == "acos"||val == "sqrt") {
+            show.value =show.value+val+"(";
+            return;
+        }
+        else if (val == "C") {
+            show.value ="";
+            return;
+        }else if(val == "B"){
+            //去掉最后一个
+            if(show.value.match(/pi|sin|cos|tan|asin|sqrt|acos|undefined$/))
+            show.value = show.value.replace(/pi|sin|cos|tan|asin|sqrt|acos|undefined$/,'');
+            else  show.value = show.value.replace(/.$/,'');
+        }else{
+            show.value+=val;
+        }
+    }
+
+
+</script>
+</body>
+</html>

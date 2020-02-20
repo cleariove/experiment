@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td colspan="3">
+                <select id="depart" onchange="show()">
+                    <option value="1">销售部</option>
+                    <option value="2">市场部</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="list" style="height: 300px;width: 400px" multiple>
+
+                </select>
+            </td>
+            <td rowspan="4">
+                <button onclick="choose()">
+                    选择
+                </button>
+                <br>
+                <button onclick="chooseAll()">
+                    全选
+                </button>
+                <br>
+                <button onclick="deleteList()">
+                    删除
+                </button>
+                <br>
+                <button onclick="deleteAll()">
+                    全删
+                </button>
+            </td>
+            <td>
+                <select id="chooseList" style="height: 300px;width: 400px" multiple>
+
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    var list1 = ["小明","小红","小华"];
+    var list2 = ["小白","小黑","小黄"];
+    var notSel = new Array();
+    var sel = new Array();
+
+    function show()
+    {
+        var objS = document.getElementById("depart");
+        var index = objS.selectedIndex;
+        var value = objS.options[index].value;
+        if(value == 1)
+        {
+            var objsel = document.getElementById("list");
+            for(var i in list1)
+            {
+                var opt=document.createElement("option");//创建一个列表项option
+                var opt_text=document.createTextNode(list1[i]);// 创建一个文本节点
+                opt.value=i;
+                opt.appendChild(opt_text); //将新的列表项节点加入DOM树
+                objsel.appendChild(opt); //将新文本节点加入DOM树
+            }
+        }
+        else if(value == 2)
+        {
+            var objsel = document.getElementById("list");
+            for(var i in list2)
+            {
+                var opt=document.createElement("option");//创建一个列表项option
+                var opt_text=document.createTextNode(list2[i]);// 创建一个文本节点
+                opt.value=i;
+                opt.appendChild(opt_text); //将新的列表项节点加入DOM树
+                objsel.appendChild(opt); //将新文本节点加入DOM树
+            }
+        }
+    }
+
+    function choose()
+    {
+        var leftSel = document.getElementById("list");
+        var rightSel = document.getElementById("chooseList");
+        var index=leftSel.selectedIndex;
+        sel[0] = leftSel.options[index].value;
+        var opt=document.createElement("option");//创建一个列表项option
+        var opt_text=document.createTextNode(sel[0]);// 创建一个文本节点
+        opt.appendChild(opt_text); //将新的列表项节点加入DOM树
+        rightSel.appendChild(opt); //将新文本节点加入DOM树
+    }
+
+    function chooseAll()
+    {
+
+    }
+
+    function deleteList()
+    {
+        var objSelect=document.getElementById("chooseList");
+        var strIndex=objSelect.selectedIndex;
+        if (strIndex != -1)
+        {
+            objSelect.options.remove(strIndex);
+        }
+        else
+        {
+            alert("请先选择列表项后再删除！");
+        }
+    }
+    function deleteAll()
+    {
+        var objSelect=document.getElementById("chooseList");
+        var strIndex=objSelect.options.length;
+        if (strIndex>0)
+        {
+            for (var i=0;i<=strIndex-1;i++ )
+            {
+                objSelect.options.remove(0);
+            }
+        }
+        else
+        {
+            alert("请先选择列表项后再删除！");
+        }
+    }
+</script>
+</body>
+</html>

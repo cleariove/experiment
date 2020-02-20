@@ -1,0 +1,5 @@
+if (flag<=0)
+then
+  flag=flag+01;
+else
+  flag=flag-01;

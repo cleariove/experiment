@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1251.0" prefWidth="1823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bowling.SingleMatchController">
+   <children>
+      <TableView fx:id="table" prefHeight="228.0" prefWidth="2025.0" onMouseClicked="#text">
+        <columns>
+            <TableColumn fx:id="Name" prefWidth="90.0" text="Name" />
+          <TableColumn fx:id="ID" prefWidth="90.0" text="ID" />
+          <TableColumn fx:id="one" prefWidth="171.0" text="1">
+               <columns>
+                  <TableColumn fx:id="one_1" prefWidth="75.0" text="一" />
+                  <TableColumn prefWidth="75.0" text="二" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="2">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="一" />
+                  <TableColumn prefWidth="75.0" text="二" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="3">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="一" />
+                  <TableColumn prefWidth="75.0" text="二" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="4">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="5">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="6">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="7">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="8">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="9">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="171.0" text="10">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="0.0" text="总得分" />
+            <TableColumn prefWidth="231.0" text="总得分" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

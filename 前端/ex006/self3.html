@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="mail"></label><input id="mail" type="text">
+<button onclick="right()">ttt</button>
+<div id="result"></div>
+<script>
+    function right()
+    {
+        var str = document.getElementById("mail").value;
+        var pattern = new RegExp(".+@.+\x2E.+")
+        if(pattern.exec(str) != null)
+            document.getElementById("result").innerHTML = "合法";
+        else
+            document.getElementById("result").innerHTML = "非法";
+    }
+</script>
+</body>
+</html>

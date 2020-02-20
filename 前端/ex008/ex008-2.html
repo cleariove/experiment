@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div
+        {
+            background:#009933;
+            width:400px;
+            height:300px;
+            margin:0px auto;
+            border:2px dotted #ff3300;
+            color:white;
+        }
+        form
+        {
+            margin:0 auto;
+        }
+        table
+        {
+            margin:0 auto;
+            font-weight:bold;
+        }
+        h2
+        {
+            font-size:28px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form>
+        <table>
+            <caption><h2>彩票投注</h2></caption>
+            <tr>
+                <td>
+                    彩票号码:
+                </td>
+                <td>
+                    <input type="text" id="number1">
+                </td>
+                <td>
+                    <input type="button" value="投注" onclick="selectnumber('number1')">
+                </td>
+                <td rowspan="3">
+                    <input type="button" value="清空">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    彩票号码:
+                </td>
+                <td>
+                    <input type="text" id="number2">
+                </td>
+                <td>
+                    <input type="button" value="投注" onclick="selectnumber('number2')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    彩票号码:
+                </td>
+                <td>
+                    <input type="text" id="number3">
+                </td>
+                <td>
+                    <input type="button" value="投注" onclick="selectnumber('number3')">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+    function selectnumber(num)
+    {
+//彩票选号助手
+        var number = new Array();
+        for (i=0;i<=6;i++)
+        {
+            number[i]=Math.floor(Math.random()*30+1); //下舍入
+        }
+        document.getElementById(num).value=number.join(" ");
+        //将数组元素数连接为字符串，中间用空格连接，作为 1 注彩票号码，写入文本框
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form name="myform">
+    <p>人民币和各种外汇比价折算。</p>
+    <b>请选择一种外汇...</b><br>
+    <p> <select name="country" onchange=" change()">
+        <option value="7.80">美元</option>
+        <option value="12.00">英 镑 </option>
+        <option value="10.00">欧 元 </option>
+        <option value="0.30">日元</option>
+    </select>
+        一元这样的外币可以兑换<input type="text" name="money" value="" onselect="sel()" >元人民币 </p>
+</form>
+
+<script>
+    function change() {
+        var curform = document.all.myform;
+        curform.money.value=curform.country.options[curform.country.selectedIndex].value;
+    }
+    function sel() {
+        var curform = document.all.myform;
+        alert("该外汇的汇率是1 比 "+curform.money.value);
+    }
+</script>
+</body>
+</html>

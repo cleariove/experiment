@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .list{
+            width:230px;height:200px;
+        }
+
+    </style>
+
+
+    <script type="text/javascript">
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        function select(){
+            if ($("leftList").selectedIndex!=-1)
+            {
+                newoption=document.createElement("option");
+                newoption.text=$("leftList").options[$("leftList").selectedIndex].text;
+                $("rightList").add(newoption);
+                $("leftList").remove($("leftList").selectedIndex)
+            }
+        }
+
+        function notSelect(){
+            if ($("rightList").selectedIndex!=-1)
+            {
+                newoption=document.createElement("option");
+                newoption.text=$("rightList").options[$("rightList").selectedIndex].text;
+                newoption.value=$("rightList").options[$("rightList").selectedIndex].value;
+                $("leftList").add(newoption);
+                $("rightList").remove($("rightList").selectedIndex)
+            }
+        }
+
+        function selectAll(){
+            var i=0;
+            for(;$("leftList").length>0;)
+            {
+                newoption=document.createElement("option");
+                newoption.text=$("leftList")[i].text;
+                $("rightList").add(newoption);
+                $("leftList").remove($("leftList")[i]);
+
+            }
+        }
+
+        function notSelectAll(){
+            var i=0;
+            for(;$("rightList").length>0;)
+            {
+                newoption=document.createElement("option");
+                newoption.text=$("rightList")[i].text;
+                $("leftList").add(newoption);
+                $("rightList").remove($("rightList")[i]);
+
+            }
+        }
+
+        function selectDepart() {
+           if($("department").options[$("department").selectedIndex].value==1){
+
+               document.getElementById("leftList").innerHTML='<option>111</option><option>222</option><option>333</option>'
+
+           }
+            if($("department").options[$("department").selectedIndex].value==2){
+
+                document.getElementById("leftList").innerHTML='<option>444</option><option>555</option><option>666</option>'
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form method="post" action="">
+
+
+    <table align="center">
+        <tr>
+            <td colspan="3">
+        <select id="department" onclick="selectDepart()">
+            <option value="1">销售部</option>
+            <option value="2">服务部</option>
+        </select>
+            </td>
+        </tr>
+        <caption>选择员工</caption>
+
+        <tr>
+            <td>
+                <select class="list" id="leftList" size="10">
+
+                </select>
+            </td>
+            <td colspan="2" align="center">
+                <input type="button" value=">" onclick="select()"><br>
+                <input type="button" value="<" onclick="notSelect();"><br>
+                <input type="button" value=">>>" onclick="selectAll()"><br>
+                <input type="button" value="<<<" onclick="notSelectAll()">
+            </td>
+            <td align="center">
+                <select class="list" id="rightList" size="10">
+                </select>
+            </td>
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>

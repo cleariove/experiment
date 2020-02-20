@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [3,12,4,7,9,10];
+    document.write("原本顺序<br>")
+    for( var obj in arr)
+    {
+        document.write(arr[obj]+"<br>");
+
+    }
+    for(var i = 0;i<arr.length;i++)
+        for(var j = i;j < arr.length - i;j++)
+    {
+        if (arr[j] > arr[j+1])
+        {
+            temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+        }
+    }
+    document.write("排序后<br>")
+    for( var obj in arr)
+    {
+        document.write(arr[obj]+"<br>");
+    }
+</script>
+</body>
+</html>

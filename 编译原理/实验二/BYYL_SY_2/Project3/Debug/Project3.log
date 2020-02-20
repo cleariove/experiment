@@ -1,0 +1,9 @@
+﻿  sy5cpp.cpp
+c:\users\stephenhe\source\repos\project3\project3\sy5cpp.cpp(38): warning C4101: “str”: 未引用的局部变量
+c:\users\stephenhe\source\repos\project3\project3\sy5cpp.cpp(72): warning C4838: 从“int”转换到“char”需要收缩转换
+c:\users\stephenhe\source\repos\project3\project3\sy5cpp.cpp(72): warning C4305: “初始化”: 从“int”到“char”截断
+c:\users\stephenhe\source\repos\project3\project3\sy5cpp.cpp(72): warning C4309: “初始化”: 截断常量值
+c:\users\stephenhe\source\repos\project3\project3\sy5cpp.cpp(309): warning C4715: “syntax”: 不是所有的控件路径都返回值
+sy5cpp.obj : error LNK2005: "char __cdecl GetBC(struct _iobuf *)" (?GetBC@@YADPAU_iobuf@@@Z) 已经在 mian.obj 中定义
+sy5cpp.obj : error LNK2005: _main 已经在 mian.obj 中定义
+C:\Users\StephenHe\source\repos\Project3\Debug\Project3.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

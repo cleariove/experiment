@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="513.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bowling.MainViewController">
+   <children>
+      <Button fx:id="single" layoutX="138.0" layoutY="147.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="173.0" text="单人赛" onAction="#goToSingleMatch">
+         <font>
+            <Font size="39.0" />
+         </font></Button>
+      <Button contentDisplay="TOP" layoutX="138.0" layoutY="295.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="173.0" text="双人赛">
+         <font>
+            <Font size="39.0" />
+         </font></Button>
+      <Button layoutX="444.0" layoutY="147.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="173.0" text="三人赛" />
+      <Button layoutX="444.0" layoutY="295.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="173.0" text="精英赛" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+#include<stdio.h>
+void main()
+{
+	int a,b,m,n,t;
+	a=1;
+	b=0;
+	printf("ÇëÊäÈëÊý×Ö£º");
+	while(a!=0)
+	{
+		scanf("%d",&a);
+		if(b==0)
+			{
+				printf("(");
+		        b=1;
+				t=a;
+		    }
+		if(a>=t)
+		{
+			if(b==2)
+			{
+				printf("\b),(%d,",t);
+				b=3;
+			}
+			printf("%d,",a);
+			b=1;
+		}
+		else
+		{
+			if(b==1)
+			{
+				printf("\b),(%d,",t);
+				b=2;
+			}
+			printf("%d,",a);
+			b=2;
+		}
+		t=a;
+	}
+	printf("\b)\n");
+}
